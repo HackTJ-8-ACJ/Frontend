@@ -35,7 +35,7 @@ export const ParkingBlock:React.FC<I> = (props) => {
     var parking_space: JSX.Element;
     
     if (props.data.occupied) {
-        parking_space = <rect x={data.point[0]} y={data.point[1]} width={width} height={height} transform={`rotate(${data.direction})`} fill={'rgb(255,0,0)'}/>
+        parking_space = <rect x={data.point[0]} y={data.point[1]} width={width} height={height} transform={`rotate(${data.direction}, ${data.point[0]}, ${data.point[1]})`} fill={'rgb(255,0,0)'}/>
     }
 
     else {
@@ -45,9 +45,9 @@ export const ParkingBlock:React.FC<I> = (props) => {
     return (
         <svg>
             {parking_space}
-            <line x1={data.point[0]} y1={data.point[1]} x2={data.point[0] + width} y2={data.point[1]} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction})`}/>
-            <line x1={data.point[0] + linewidth / 2} y1={data.point[1] - props.size / 25} x2={data.point[0] + linewidth / 2} y2={data.point[1] + height} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction})`}/>
-            <line x1={data.point[0] + linewidth / 2} y1={data.point[1] - props.size / 25} x2={data.point[0] + linewidth / 2} y2={data.point[1] + height} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction}) translate(${props.size})`}/>
+            <line x1={data.point[0]} y1={data.point[1]} x2={data.point[0] + width} y2={data.point[1]} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction}, ${data.point[0]}, ${data.point[1]})`}/>
+            <line x1={data.point[0] + linewidth / 2} y1={data.point[1] - props.size / 25} x2={data.point[0] + linewidth / 2} y2={data.point[1] + height} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction}, ${data.point[0]}, ${data.point[1]})`}/>
+            <line x1={data.point[0] - linewidth / 2} y1={data.point[1] - props.size / 25} x2={data.point[0] - linewidth / 2} y2={data.point[1] + height} stroke="white" strokeWidth={linewidth} transform={`rotate(${data.direction}, ${data.point[0]}, ${data.point[1]}) translate(${props.size})`}/>
         </svg>
     )
     // (0, 255, 0) => (255, 0, 0) as counts tends to infinity
