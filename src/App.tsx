@@ -12,10 +12,10 @@ function App() {
     for (let i = 0; i < 2; i++ ) {
       for (let j = 0; j < 15; j++) {
         if (i % 2 === 0) {
-          data.push({'point': [50 + 70 * j, 250 + 350*k], 'direction': 0, 'occupied': false})
+          data.push({'point': [75 + 70 * j, 250 + 350*k], 'direction': 0, 'occupied': false})
         }
         else {
-          data.push({'point': [50 + 75 + 70 * j, 250 + 350*k], 'direction': 180, 'occupied': false})
+          data.push({'point': [75 + 70 * j, 250 + 350*k], 'direction': 180, 'occupied': false})
         }
       }
     }

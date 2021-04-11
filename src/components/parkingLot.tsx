@@ -28,7 +28,7 @@ export const ParkingLot:React.FC<I> = (props) => {
 
   return <Container>
     <Row className="justify-content-md-center pt-3">
-      <svg width={"100%"} height={800}>
+      <svg width={"100%"} height={750}>
       {data.map((value: parking, index: number) => {
       return <ParkingBlock data={value} size={75} key={index}></ParkingBlock>
       })}
@@ -36,6 +36,9 @@ export const ParkingLot:React.FC<I> = (props) => {
       </Row>
     <Row className="justify-content-md-center pt-3">
       <Button variant="dark" onClick={() => toggle(!realData)}> Toggle Real Data </Button>
+    </Row>
+    <Row className="justify-content-md-center pt-3">
+      {' '}
     </Row>
   </Container>
 }
