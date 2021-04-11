@@ -4,7 +4,18 @@ import { parking } from './components/datatypes'
 import { ParkingLot } from './components/parkingLot'
 
 function App() {
-  const data: parking[] = [{'point': [75, 50], 'direction': 10}, {'point': [150, 50], 'direction': 0}, {'point': [225, 50], 'direction': 0}]
+  const data: parking[] = []
+
+
+  // initialize parking
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 10; j++) {
+      data.push({'point': [50 + 75 * j, 50 + 125 * i], 'direction': 0, 'occupied': false})
+    }
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">

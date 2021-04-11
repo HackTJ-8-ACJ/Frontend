@@ -1,4 +1,5 @@
 export type parking = {
     point: [number, number],
-    direction: number
+    direction: number,
+    occupied: boolean
 }

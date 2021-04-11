@@ -2,7 +2,6 @@ import { parking } from './datatypes'
 import React from 'react'
 interface I {
     data: parking;
-    occupied: boolean;
     size: number;
 }
 
@@ -26,7 +25,7 @@ export const ParkingBlock:React.FC<I> = (props) => {
 
     var parking_space: JSX.Element;
     
-    if (props.occupied) {
+    if (props.data.occupied) {
         parking_space = <rect x={data.point[0]} y={data.point[1]} width={width} height={height} transform={`rotate(${data.direction}, ${data.point[0]}, ${data.point[1]})`} fill={'rgb(255,0,0)'}/>
     }
 
