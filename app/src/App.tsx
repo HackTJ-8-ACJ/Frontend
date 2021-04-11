@@ -4,7 +4,7 @@ import { parking } from './components/datatypes'
 import { ParkingLot } from './components/parkingLot'
 
 function App() {
-  const data: parking[] = [{'point': [50, 50], 'direction': 0}]
+  const data: parking[] = [{'point': [75, 50], 'direction': 10}, {'point': [150, 50], 'direction': 0}, {'point': [225, 50], 'direction': 0}]
   return (
     <div className="App">
       <header className="App-header">

@@ -5,7 +5,7 @@ export function ParkingLot(props: any) {
 
   return <svg width="1000" height="1000">
     {props.data.map((value: parking, index: number) => {
-      return <ParkingBlock data={value} key={index}></ParkingBlock>
+      return <ParkingBlock data={value} size={75} occupied={false} key={index}></ParkingBlock>
     })}
   </svg>
 }
