@@ -12,16 +12,20 @@ export const ParkingLot:React.FC<I> = (props) => {
   const [data, setData] = React.useState(props.data);
   const [realData, toggle] = React.useState(false);
 
+  // fake data generation
   useEffect(() => {
       const interval = setInterval(() => {
         if (!realData) {
           var new_data = [...data]
           new_data[Math.floor(Math.random() * new_data.length)].occupied = true;
           new_data[Math.floor(Math.random() * new_data.length)].occupied = false;
+          // poll
           setData(new_data)
         }
-      //code goes here that will be run every 5 seconds.    
-    }, 5000);
+      //code goes here that will be run every 5 seconds.
+    }, 500);
+
+    // websocket would go here
 
     return () => clearInterval(interval);
   }, [realData, data]);
