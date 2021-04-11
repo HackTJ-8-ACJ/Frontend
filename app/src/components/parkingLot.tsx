@@ -10,18 +10,21 @@ interface I {
 
 export const ParkingLot:React.FC<I> = (props) => {
   const [data, setData] = React.useState(props.data);
+  const [realData, toggle] = React.useState(false);
 
   useEffect(() => {
-      const interval = setInterval(() => { 
-        var new_data = [...data]
-        new_data[Math.floor(Math.random() * new_data.length)].occupied = true;
-        new_data[Math.floor(Math.random() * new_data.length)].occupied = false;
-        setData(new_data)
+      const interval = setInterval(() => {
+        if (!realData) {
+          var new_data = [...data]
+          new_data[Math.floor(Math.random() * new_data.length)].occupied = true;
+          new_data[Math.floor(Math.random() * new_data.length)].occupied = false;
+          setData(new_data)
+        }
       //code goes here that will be run every 5 seconds.    
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [data]);
+  }, [realData, data]);
 
   return <Container>
     <Row className="justify-content-md-center pt-3">
@@ -32,7 +35,7 @@ export const ParkingLot:React.FC<I> = (props) => {
       </svg>
       </Row>
     <Row className="justify-content-md-center pt-3">
-      <Button variant="dark"> Toggle Real Data </Button>
+      <Button variant="dark" onClick={() => toggle(!realData)}> Toggle Real Data </Button>
     </Row>
   </Container>
 }
