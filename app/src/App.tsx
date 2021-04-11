@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { parking } from './components/datatypes'
+import { ParkingLot } from './components/parkingLot'
 
-function App(data: parking[]) {
+function App() {
+  const data: parking[] = [{'point': [0, 1], 'direction': 10}]
   return (
     <div className="App">
       <header className="App-header">
-      <Graph data={data} />
+        <ParkingLot data={data}/>
       </header>
     </div>
   );

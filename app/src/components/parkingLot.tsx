@@ -1,7 +1,12 @@
 import { parking } from './datatypes'
+import { ParkingBlock } from './parking'
 
-export function parkingLot(data: parking[]) {
+export function ParkingLot(props: any) {
   return <svg width="100" height="100">
-  <rect x="12" y="-10" width="20" height="20" transform="rotate(45)" />
+    <ul>
+      {props.data.map((value: parking, index: number) => {
+          return <ParkingBlock data={value} key={index}></ParkingBlock>
+      })}
+    </ul>
   </svg>
 }

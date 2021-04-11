@@ -1,9 +1,8 @@
-import { parking } from './datatypes'
-
-export function parkingBlock(data: parking) {
+export function ParkingBlock(props: any) {
+    console.log('Hello!!')
     return (
     <svg width="31" height="31">
-        <rect x="data.point[0]" y="data.point[1]" width="20" height="20" transform="rotate(data.direction)" />
+        <rect x={props.data.point[0]} y={props.data.point[1]} width={20} height={20} transform={`rotate(${props.data.direction})`} stroke="green" strokeWidth={2}/>
     </svg>
     )
 }
