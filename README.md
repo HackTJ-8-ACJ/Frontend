@@ -30,10 +30,11 @@ Your app is ready to be deployed!
 Once built, make sure you are in the `Frontend/` directory and run the following command:
 
 ```sh
+git push origin --delete build
 git subtree push --prefix build origin build
 ```
 
-This will push just the build as a branch called `build` to the GitHub repo so that it can be deployed with gh-pages.
+This will delete the build branch and then push just the build as a branch called `build` to the GitHub repo so that it can be deployed with gh-pages. From there, go into the `Frontend > Settings > Pages`, set the source branch to `build`, and set the custom domain to `parkalot.tech`. Really manual, but it works.
 
 ### `npm run eject`
 
