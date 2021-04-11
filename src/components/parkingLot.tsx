@@ -1,11 +1,24 @@
+import React from 'react'
+import { Button, Container, Row } from 'react-bootstrap';
 import { parking } from './datatypes'
 import { ParkingBlock } from './parking'
 
-export function ParkingLot(props: any) {
 
-  return <svg width="1000" height="1000">
-    {props.data.map((value: parking, index: number) => {
+interface I {
+  data: parking[];
+}
+
+export const ParkingLot:React.FC<I> = (props) => {
+  return <Container>
+    <Row className="justify-content-md-center pt-3">
+      <svg width={"100%"} height={450}>
+      {props.data.map((value: parking, index: number) => {
       return <ParkingBlock data={value} size={75} key={index}></ParkingBlock>
-    })}
-  </svg>
+      })}
+      </svg>
+      </Row>
+    <Row className="justify-content-md-center pt-3">
+      <Button variant="dark"> Toggle Real Data </Button>
+    </Row>
+  </Container>
 }

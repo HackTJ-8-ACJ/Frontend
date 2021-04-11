@@ -9,12 +9,10 @@ function App() {
 
   // initialize parking
   for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 10; j++) {
-      data.push({'point': [50 + 75 * j, 50 + 125 * i], 'direction': 0, 'occupied': false})
+    for (let j = 0; j < 15; j++) {
+      data.push({'point': [75 * j, 50 + 125 * i], 'direction': 0, 'occupied': false})
     }
   }
-
-
 
   return (
     <div className="App">
